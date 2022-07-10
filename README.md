@@ -56,15 +56,23 @@ From the above screenshot, we can see a visual representation of these download 
 
 - **Based on the report created, what is the approximate date and time of the attack?**
 
-Based on our findings in the above queries, we can see download and upload speed was drastically dropped at approximately 22:30pm on the 23rd of February. We can see this in the below screenshot: 
+Based on our findings in the above queries, we can see download and upload speed was drastically dropped at approximately 2:30PM on the 23rd of February. We can see this in the below screenshot: 
 
 ![Downloads Uploads Dropped 1430](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Downloads%20Uploads%20Dropped%201430.PNG)
 
-
+We can se the downloads dropped to 7.87 at 2:30PM. This is a drastic drop from 109.16 megabits that was the previous event. It's fair to assume then that this is around when the attack started.
 
 - **When did the system begin to recover?**
 
+![Downloads Uploads Recovering](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Downloads%20Uploads%20Recovering.PNG)
+
+We can see from the above screenshot that downloaded megabits increased from 17.56 to 65.34, which is a drastic increase. Therefore, it's safe to assume this is around when the system started to recover and get back to normal network traffic flow. 
+
 - **When did the network traffic flow appear to be normal?**
+
+![Downloads Uploads Fully Recovered](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Downloads%20Uploads%20Recovered%20Fully.PNG)
+
+We can see from tyhe above screenshot that downloaded megabits jumped to 123.91 from 78.34 at approximately 11:30PM on the 23rd of Feb. It is safe to assume that this is about the time where network traffic flow has stabilised and returned to normal. 
 
 Submit a screen shot of your report and the answer to the questions above.
 
