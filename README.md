@@ -72,7 +72,7 @@ We can see from the above screenshot that downloaded megabits increased from 17.
 
 ![Downloads Uploads Fully Recovered](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Downloads%20Uploads%20Recovered%20Fully.PNG)
 
-We can see from tyhe above screenshot that downloaded megabits jumped to 123.91 from 78.34 at approximately 11:30PM on the 23rd of Feb. It is safe to assume that this is about the time where network traffic flow has stabilised and returned to normal. 
+We can see from the above screenshot that downloaded megabits jumped to 123.91 from 78.34 at approximately 11:30PM on the 23rd of Feb. It is safe to assume that this is about the time where network traffic flow has stabilised and returned to normal. 
 
 Submit a screen shot of your report and the answer to the questions above.
 
