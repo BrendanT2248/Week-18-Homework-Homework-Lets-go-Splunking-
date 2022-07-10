@@ -86,15 +86,55 @@ For more information on Nessus, read the following link: https://www.tenable.com
 
 ### **1. Upload the following file from the Nessus vulnerability scan.**
 
-Nessus Scan Results
+![Nessus Scan Results](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Files/nessus_logs.csv)
+
+Screenshot of nessus scan results uploaded into Splunk:
+
+![Nessus Logs Uploaded](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20logs%20uploaded.PNG)
 
 ### **2. Create a report that shows the count of critical vulnerabilities from the customer database server.**
 
 - **The database server IP is `10.11.36.23`.**
 
+Use `dest_ip="10.11.36.23"` in the query
+
 - **The field that identifies the level of vulnerabilities is severity.**
 
+It's worth noting there are 5 types of severity levels these logs look for, as shown below:
+
+![Severity Levels](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20logs%20severity%20levels.PNG)
+
+We want to filter for any vulnerabilities whereby the severity level is a 'crtiical' value. We can use `severity="crtiical"` in our query.
+
+The entire query is `source="nessus_logs.csv" dest_ip="10.11.36.23" severity="critical"`
+
+See below screenshot for entire query that displays the count of critical vulnerabilities from the customer database server from this log file:
+
+![Severity Level Critical Filtered](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20logs%20severity%20level%20filtered.PNG)
+
+There were a total of 49 critical vulnerabilities found when the destination IP was 10.11.36.23 (which is the database server).
+
 ### **3. Build an alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to `soc@vandalay.com`.**
+
+Create the alert by clicking 'save as' and then 'alert' after we've generated our results from the query above:
+
+![Save as nessus alert](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20save%20alert.PNG)
+
+Enter details to generate alerts whenever Nessus detects a vulnerability on the database server. Enter name, description and any other relative information:
+
+![Nessus Alert 1](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20alert%201.PNG)
+
+Enter email details to send the generated alert to - `soc@vandalay.com` and enter message details to be sent with the email:
+
+![Nessus Alert 2](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20alert%2022.PNG)
+
+Contiune entering details of alert and then click 'save':
+
+![Nessus Alert 3](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20alert%203.PNG)
+
+Once saved we should be able to see the alert and edit if we wish:
+
+![Nessus Alert 4](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20alert%204.PNG)
 
 Submit a screenshot of your report and a screenshot of proof that the alert has been created.
 
