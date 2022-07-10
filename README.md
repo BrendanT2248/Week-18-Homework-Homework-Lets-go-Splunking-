@@ -54,11 +54,17 @@ From the above screenshot, we can see a visual representation of these download 
 
 ### **Answer the following questions:**
 
-**- Based on the report created, what is the approximate date and time of the attack?**
+- **Based on the report created, what is the approximate date and time of the attack?**
 
-**- When did the system begin to recover?**
+Based on our findings in the above queries, we can see download and upload speed was drastically dropped at approximately 22:30pm on the 23rd of February. We can see this in the below screenshot: 
 
-**- When did the network traffic flow appear to be normal?**
+![Downloads Uploads Dropped 1430](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Downloads%20Uploads%20Dropped%201430.PNG)
+
+
+
+- **When did the system begin to recover?**
+
+- **When did the network traffic flow appear to be normal?**
 
 Submit a screen shot of your report and the answer to the questions above.
 
@@ -76,9 +82,9 @@ Nessus Scan Results
 
 ### **2. Create a report that shows the count of critical vulnerabilities from the customer database server.**
 
-**- The database server IP is `10.11.36.23`.**
+- **The database server IP is `10.11.36.23`.**
 
-**- The field that identifies the level of vulnerabilities is severity.**
+- **The field that identifies the level of vulnerabilities is severity.**
 
 ### **3. Build an alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to `soc@vandalay.com`.**
 
@@ -93,15 +99,15 @@ Background:  A Vandalay server is also experiencing brute force attacks into the
 
 ### **1. Upload the administrator login logs.**
 
-- Admin Logins
+- **Admin Logins**
 
 ### **2. When did the brute force attack occur?**
 
-_- Hints:_
+_Hints:_
 
-  _- Look for the name field to find failed logins._
+- _Look for the name field to find failed logins._
   
-  _- Note the attack lasted several hours._
+- _Note the attack lasted several hours._
 
 ### **3. Determine a baseline of normal activity and a threshold that would alert if a brute force attack is occurring.**
 
