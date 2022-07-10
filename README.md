@@ -22,6 +22,12 @@ Screenshot of uploaded 'server_speedtest.csv' file into Splunk:
 
 _Hint: The format for creating a ratio is: `| eval new_field_name = 'fieldA'  / 'fieldB'`_
 
+Query used in Splunk to generate a ratio between upload and download speeds - `source="server_speedtest.csv" | eval ratio = DOWNLOAD_MEGABITS/UPLOAD_MEGABITS`
+
+![Ratio Download Upload](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Ratio%20Download%20Upload.PNG)
+
+We can see the ratio of downloads and uploads from this query. 
+
 ### **3. Create a report using the Splunk's table command to display the following fields in a statistics report:**
 
 - `_time`
@@ -31,6 +37,20 @@ _Hint: The format for creating a ratio is: `| eval new_field_name = 'fieldA'  / 
 - `ratio`
 
 _Hint: Use the following format when for the table command: | table fieldA  fieldB fieldC_
+
+Query used in Splunk to generate a ratio between upload and download speeds - `source="server_speedtest.csv" | eval ratio = DOWNLOAD_MEGABITS/UPLOAD_MEGABITS | table _time, IP_ADDRESS, DOWNLOAD_MEGABITS, UPLOAD_MEGABITS, ratio`
+
+![Table 1 Download Upload](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Table%201%20Download%20Upload.PNG)
+
+From the above screenshot, we can see the total event timeline of when downloads and uploads took place. 
+
+![Table 2 Download Upload](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Table%202%20Download%20Upload.PNG)
+
+From the above screenshot, we can see the time in which downloads and uploads took place as well as the source IP address that was taking this action. 
+
+![Table 3 Download Upload](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/Table%203%20Download%20Upload%20Column%20Graph.PNG)
+
+From the above screenshot, we can see a visual representation of these download and upload events in a column graph format. The time is displayed on the bottom and this makes our data much more readable. 
 
 ### **Answer the following questions:**
 
