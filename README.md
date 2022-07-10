@@ -90,7 +90,7 @@ For more information on Nessus, read the following link: https://www.tenable.com
 
 Screenshot of nessus scan results uploaded into Splunk:
 
-![Nessus Logs Uploaded](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20logs%20uploaded.PNG)
+[Nessus Logs Uploaded](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/nessus%20logs%20uploaded.PNG)
 
 ### **2. Create a report that shows the count of critical vulnerabilities from the customer database server.**
 
