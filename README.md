@@ -179,12 +179,30 @@ We can see from the timeline of these events that 124 is quite a spike. In the p
 
 With this in mind and taking into account there were around 124-135 log on attempts when the brute force attack occurred, I would consider a baseline of about 40 bad log ons per hour. I would have the ranges for bad log ons per hour as follows:
 
-- 0-40 is normal behaviour
-- 40-80 is worth investigating
-- 80+ is considered crtiical and events should be investigated as soon as possible. 
+- 0-25 is normal behaviour
+- 25-50 is worth investigating
+- 50+ is considered crtiical and events should be investigated as soon as possible. 
 
 ### **4. Design an alert to check the threshold every hour and email the SOC team at `SOC@vandalay.com` if triggered.**
 
+To create an alert for this type of event, I went through the following steps:
 
+Click 'save as' and then 'alert':
+
+![Save as alert](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/brute%20force%20attempt%20alert%201.PNG)
+
+Fill in details of alert, including when to trigger it (anything above 25 attempts per hour):
+
+![Alert details](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/brute%20force%20attempt%20alert%202.PNG)
+
+Enter details of an action. In this case we will be sending an email to `SOC@vandalay.com`:
+
+![Alert email setup](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/brute%20force%20attempt%20alert%203.PNG)
+
+Save the alert and we can then view it:
+
+![Alert saved](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/brute%20force%20attempt%20alert%204.PNG)
+
+We have now successfully created an alert that will trigger when there are over 25 events of an account failing to log in.
 
 Submit the answers to the questions about the brute force timing, baseline and threshold. Additionally, provide a screenshot as proof that the alert has been created.
