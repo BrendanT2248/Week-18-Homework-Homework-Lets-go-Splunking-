@@ -147,7 +147,11 @@ Background:  A Vandalay server is also experiencing brute force attacks into the
 
 ### **1. Upload the administrator login logs.**
 
-- **Admin Logins**
+[Admin Logins](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Files/Administrator_logs.csv)
+
+Screenshot of uploaded 'Administrator_logs.csv' file into Splunk:
+
+![Admin Logs Image](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/administrator_logs.PNG)
 
 ### **2. When did the brute force attack occur?**
 
@@ -157,8 +161,30 @@ _Hints:_
   
 - _Note the attack lasted several hours._
 
+Because we want to look for any indiactors of a brute force attack, we want to drill down the logs into whereby accounts failed to log on. If we navigate to the field 'name' we can see the values this holds in the logs. In this case, we can see a count of 1004 "An account failed to log on". This is a good indactor that a brute force attack has occured. See screenshot: 
+
+![Name field account failed to log on](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/admin%20logs%20name%20field.PNG)
+
+Now if we add this to our search we can see the total events of when this occurred. We can then see when the majority of these events took place, which is a good indicator as to when this occurred. See screenshot:
+
+![Brute force attack strarting](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/admin%20logs%20brute%20force%20start%20time.PNG)
+
+As we can see, there is quite a large spike in the events whereby "An account failed to log on" at around 9am on the 21st of Febraury. We can see of the total 1004 events that occurred, at 9am there was 124 of these events with similar numbers appearing in the hours after. Thereby, I believe the attack started around this time - 9:00AM on the 21st of Febraury 2020. 
+
 ### **3. Determine a baseline of normal activity and a threshold that would alert if a brute force attack is occurring.**
 
+We can see from the timeline of these events that 124 is quite a spike. In the preceeding hours to this event, the most amount of bad logins was around 23. We can consider this normal behaviour. See screenshot: 
+
+![Normal bad log ons](https://github.com/BrendanT2248/Week-18-Homework-Lets-go-Splunking/blob/main/Images/admin%20logs%20normal%20bad%20log%20ons.PNG)
+
+With this in mind and taking into account there were around 124-135 log on attempts when the brute force attack occurred, I would consider a baseline of about 40 bad log ons per hour. I would have the ranges for bad log ons per hour as follows:
+
+- 0-40 is normal behaviour
+- 40-80 is worth investigating
+- 80+ is considered crtiical and events should be investigated as soon as possible. 
+
 ### **4. Design an alert to check the threshold every hour and email the SOC team at `SOC@vandalay.com` if triggered.**
+
+
 
 Submit the answers to the questions about the brute force timing, baseline and threshold. Additionally, provide a screenshot as proof that the alert has been created.
